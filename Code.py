@@ -1,24 +1,24 @@
 class Product:
-    def __init__(self, name, price, quantity):
+    def __init__(self, name,quantity,price):
         self.name = name
-        self.price = price
         self.quantity = quantity
+        self.quantity = price
 
 
 class InventoryManager:
     def __init__(self):
         self.inventory = []
 
-    def add_product(self, name, price, quantity):
-        product = Product(name, price, quantity)
+    def add_product(self, name, quantity, price):
+        product = Product(name,quantity,price)
         self.inventory.append(product)
         print(f"{name} added to the inventory.")
 
-    def update_product(self, name, price, quantity):
+    def update_product(self, name,quantity,price):
         for product in self.inventory:
             if product.name == name:
-                product.price = price
                 product.quantity = quantity
+                product.price = price
                 print(f"{name} updated in the inventory.")
                 return
         print(f"{name} not found in the inventory.")
@@ -66,7 +66,7 @@ def main():
         elif choice == 4:
             inventory_manager.print_inventory()
         elif choice == 5:
-            print("You are now exiting the inventory management system. Goodbye" + user_name + "!!!")
+            print("You are now exiting the inventory management system. Goodbye" + user_name + "!")
             break
         else:
 
